@@ -1,6 +1,7 @@
 package com.budomuya.webservice.mockData;
 
 import com.budomuya.webservice.model.category.Category;
+import com.budomuya.webservice.model.menu.Menu;
 import com.budomuya.webservice.model.news.News;
 
 import java.util.ArrayList;
@@ -15,17 +16,17 @@ public class MockDataManager {
     public static List<Category> mockCategoryList() {
         List<Category> categories = new ArrayList<Category>();
         categories.add(new Category(
-           "spor",
-           "Spor"
+                "spor",
+                "Spor"
         ));
         categories.add(new Category(
-            "magazin",
-            "Magazin"
+                "magazin",
+                "Magazin"
         ));
 
         categories.add(new Category(
-            "politika",
-            "Politika"
+                "politika",
+                "Politika"
         ));
 
         return categories;
@@ -64,4 +65,20 @@ public class MockDataManager {
 
     }
 
+    public static List<Menu> mockMenuList() {
+        List<Menu> menus = new ArrayList<Menu>();
+
+        menus.add(new Menu(
+                "index.html",
+                "Home"
+        ));
+
+        menus.add(new Menu(
+                "",
+                "Contact"
+        ));
+
+
+        return menus;
+    }
 }
