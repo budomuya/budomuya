@@ -1,26 +1,22 @@
-package com.budomuya.webservice.model.category;
+package com.budomuya.webservice.model.news;
 
 import com.budomuya.webservice.model.BaseModel;
 
 /**
  * Created by alparslanb
- * on 11/12/14.
+ * on 14/12/14.
  */
-public class Category extends BaseModel {
+public class LastUpdate extends BaseModel{
 
     private String key;
     private String value;
-    private String href;
+    private String link;
 
-    public Category (String key, String value, String href) {
+    public LastUpdate(String key, String value, String link) {
         super();
         this.key = key;
         this.value = value;
-        this.href = href;
-    }
-
-    public String getHref() {
-        return href;
+        this.link = link;
     }
 
     public String getKey() {
@@ -29,5 +25,9 @@ public class Category extends BaseModel {
 
     public String getValue() {
         return value;
+    }
+
+    public String getLink() {
+        return link;
     }
 }

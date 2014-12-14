@@ -10,6 +10,7 @@ public class Menu {
     private String name;
 
     public Menu(String href, String name) {
+        super();
         this.href = href;
         this.name = name;
     }

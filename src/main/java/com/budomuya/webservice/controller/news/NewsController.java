@@ -2,6 +2,7 @@ package com.budomuya.webservice.controller.news;
 
 import com.budomuya.webservice.controller.BaseController;
 import com.budomuya.webservice.mockData.MockDataManager;
+import com.budomuya.webservice.model.news.LastUpdate;
 import com.budomuya.webservice.model.news.News;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,6 +20,12 @@ public class NewsController extends BaseController {
     public List<News> getNews() {
 
         return MockDataManager.mockNewsList();
+    }
+
+    @RequestMapping("/getLastUpdate")
+    public LastUpdate getLastUpdate() {
+
+        return MockDataManager.mockLastUpdate();
     }
 
 }

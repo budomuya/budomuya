@@ -1,7 +1,9 @@
 package com.budomuya.webservice.mockData;
 
 import com.budomuya.webservice.model.category.Category;
+import com.budomuya.webservice.model.language.Language;
 import com.budomuya.webservice.model.menu.Menu;
+import com.budomuya.webservice.model.news.LastUpdate;
 import com.budomuya.webservice.model.news.News;
 
 import java.util.ArrayList;
@@ -17,16 +19,19 @@ public class MockDataManager {
         List<Category> categories = new ArrayList<Category>();
         categories.add(new Category(
                 "spor",
-                "Spor"
+                "Spor",
+                "#"
         ));
         categories.add(new Category(
                 "magazin",
-                "Magazin"
+                "Magazin",
+                "#"
         ));
 
         categories.add(new Category(
                 "politika",
-                "Politika"
+                "Politika",
+                "#"
         ));
 
         return categories;
@@ -80,5 +85,39 @@ public class MockDataManager {
 
 
         return menus;
+    }
+
+    public static List<Language> mockLanguagList() {
+        List<Language> languages = new ArrayList<Language>();
+        languages.add(new Language(
+                "#",
+                "img/news/uk.png",
+                "UK",
+                "English"
+        ));
+
+        languages.add(new Language(
+                "#",
+                "img/news/france.png",
+                "France",
+                "France"
+        ));
+
+        languages.add(new Language(
+                "#",
+                "img/news/garman.png",
+                "German",
+                "German"
+        ));
+
+        return languages;
+    }
+
+    public static LastUpdate mockLastUpdate() {
+        return new LastUpdate(
+                "Last Update",
+                "Lorem ipsum dolor sit amet",
+                "#"
+        );
     }
 }
