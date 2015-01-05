@@ -30,7 +30,8 @@ public class CORSFilter implements Filter{
         response.setHeader("Access-Control-Allow-Origin", "*");
         response.setHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS, DELETE");
         response.setHeader("Access-Control-Allow-Headers", "x-requested-with");
-        response.setHeader("Access-Control-Expose-Headers", "x-requested-with"); chain.doFilter(req, res);
+        response.setHeader("Access-Control-Expose-Headers", "x-requested-with");
+        chain.doFilter(req, res);
 
     }
 

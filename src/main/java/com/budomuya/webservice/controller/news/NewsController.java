@@ -3,10 +3,13 @@ package com.budomuya.webservice.controller.news;
 import com.budomuya.webservice.controller.BaseController;
 import com.budomuya.webservice.mockData.MockDataManager;
 import com.budomuya.webservice.model.news.LastUpdate;
-import com.budomuya.webservice.model.news.News;
+import com.oxinews.servis.OxinewsService;
+import com.oxinews.servis.model.NewsData;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -16,10 +19,18 @@ import java.util.List;
 @RestController
 public class NewsController extends BaseController {
 
-    @RequestMapping("/getNews")
-    public List<News> getNews() {
+    @Autowired
+    private OxinewsService oxinewsService;
 
-        return MockDataManager.mockNewsList();
+    @RequestMapping("/getNews")
+    public List<NewsData> getNews() {
+        List<NewsData> response = new ArrayList<NewsData>();
+        try {
+            response = oxinewsService.getNewsList(null, null, null, 0, 10);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return response;
     }
 
     @RequestMapping("/getLastUpdate")
